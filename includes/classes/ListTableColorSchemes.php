@@ -60,13 +60,16 @@ class ColorSchemes extends Base {
         $sortable = $this->get_sortable_columns();
         $this->_column_headers = array($columns, $hidden, $sortable);
         $data = array();
-        foreach (Options::get_cschemes() as $key=>$palette) {
+    
+        $options = new Options(); // Instantiate the class that contains the get_cschemes() method
+        foreach ($options->get_cschemes() as $key=>$palette) { // Call the method on the instantiated object
             $a = array();
             $a['id'] = $key;
             $a['name'] = $palette['name'];
             $a['colors'] = $palette['colors'];
             $data[] = $a;
         }
+    
         $this->items = $data;
-    }
+    }    
 }
