@@ -146,9 +146,9 @@ class Handling {
         if (!($service = filter_input(INPUT_POST, 'service'))) {
             $this->arg_service = filter_input(INPUT_GET, 'service');
         }
-        $this->arg_tab = strtolower($this->arg_tab);
-        $this->arg_action = strtolower($this->arg_action);
-        $this->arg_service = strtolower($this->arg_service);
+        $this->arg_tab = is_string($this->arg_tab) ? strtolower($this->arg_tab) : '';
+        $this->arg_action = is_string($this->arg_action) ? strtolower($this->arg_action) : '';
+        $this->arg_service = is_string($this->arg_service) ? mb_strtolower($this->arg_service) : '';
     }
 
     /**
