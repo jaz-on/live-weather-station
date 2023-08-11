@@ -754,8 +754,8 @@ class InlineHelp {
         if (!($action = filter_input(INPUT_GET, 'action'))) {
             $action = filter_input(INPUT_POST, 'action');
         }
-        if (!($service = strtolower(filter_input(INPUT_GET, 'service')))) {
-            $service = strtolower(filter_input(INPUT_POST, 'service'));
+        if (!($service = mb_strtolower(filter_input(INPUT_GET, 'service')))) {
+            $service = mb_strtolower(filter_input(INPUT_POST, 'service'));
         }
         if (!($id = filter_input(INPUT_GET, 'id'))) {
             $id = filter_input(INPUT_POST, 'id');
