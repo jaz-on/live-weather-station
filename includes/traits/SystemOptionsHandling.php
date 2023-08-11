@@ -163,7 +163,7 @@ trait Handling {
      * @since 3.6.0
      */
     public static function get_cschemes() {
-        return get_option(self::$live_weather_station_styles_chart_cscheme_key, self::live_weather_station_cshemes());
+        return get_option(static::$live_weather_station_styles_chart_cscheme_key, static::live_weather_station_cshemes());
     }
 
     /**
