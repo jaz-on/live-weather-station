@@ -402,9 +402,9 @@ class InlineHelp {
         if (!($action = filter_input(INPUT_GET, 'action'))) {
             $action = filter_input(INPUT_POST, 'action');
         }
-        if (!($service = strtolower(filter_input(INPUT_GET, 'service')))) {
-            $service = strtolower(filter_input(INPUT_POST, 'service'));
-        }
+        if (!($service = mb_strtolower(filter_input(INPUT_GET, 'service', FILTER_SANITIZE_STRING)))) {
+            $service = mb_strtolower(filter_input(INPUT_POST, 'service', FILTER_SANITIZE_STRING));
+        }        
         if (!($id = filter_input(INPUT_GET, 'mid'))) {
             $id = filter_input(INPUT_POST, 'mid');
         }
