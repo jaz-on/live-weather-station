@@ -243,7 +243,7 @@ spl_autoload_register(
             $file = LWS_INCLUDES_DIR.'process/autoload.php';
         }
     }
-    if (!empty($file) && file_exists($file)) {
+    if ($file !== null && file_exists($file)) {
         require $file;
     }
     elseif (strpos($class, 'eatherStation') > 0) {
