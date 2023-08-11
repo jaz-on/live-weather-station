@@ -243,8 +243,8 @@ spl_autoload_register(
             $file = LWS_INCLUDES_DIR.'process/autoload.php';
         }
     }
-    if (file_exists($file)) {
-        require_once $file;
+    if (!empty($file) && file_exists($file)) {
+        require $file;
     }
     elseif (strpos($class, 'eatherStation') > 0) {
         Logger::emergency('Core', null, null, null, null, null, 1, 'Unable to load ' . $class . ' class from ' . $file);
